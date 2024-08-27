@@ -15,8 +15,9 @@
 		207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */; };
 		207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */; };
 		207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */; };
-		207E8A062C7E300E00676CCF /* CartoonsForKids_Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */; };
+		207E8A062C7E300E00676CCF /* Cartoons_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A052C7E300E00676CCF /* Cartoons_Model.swift */; };
 		207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */; };
+		207E8A0D2C7E723500676CCF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A0C2C7E723500676CCF /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,9 @@
 		207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_ViewController.swift; sourceTree = "<group>"; };
 		207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Interactor.swift; sourceTree = "<group>"; };
 		207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Presenter.swift; sourceTree = "<group>"; };
-		207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Entity.swift; sourceTree = "<group>"; };
+		207E8A052C7E300E00676CCF /* Cartoons_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoons_Model.swift; sourceTree = "<group>"; };
 		207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Router.swift; sourceTree = "<group>"; };
+		207E8A0C2C7E723500676CCF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,8 @@
 		207E89E52C7E120E00676CCF /* Cartoons For Kids_image */ = {
 			isa = PBXGroup;
 			children = (
+				207E8A0B2C7E71CB00676CCF /* CartoonForKids_Error */,
+				207E8A0A2C7E6E5500676CCF /* Model */,
 				207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */,
 				207E89E62C7E120E00676CCF /* AppDelegate.swift */,
 				207E89E82C7E120E00676CCF /* SceneDelegate.swift */,
@@ -89,10 +93,25 @@
 				207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */,
 				207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */,
 				207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */,
-				207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */,
 				207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */,
 			);
 			path = CartoonsForKidsList;
+			sourceTree = "<group>";
+		};
+		207E8A0A2C7E6E5500676CCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				207E8A052C7E300E00676CCF /* Cartoons_Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		207E8A0B2C7E71CB00676CCF /* CartoonForKids_Error */ = {
+			isa = PBXGroup;
+			children = (
+				207E8A0C2C7E723500676CCF /* NetworkError.swift */,
+			);
+			path = CartoonForKids_Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,11 +185,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */,
-				207E8A062C7E300E00676CCF /* CartoonsForKids_Entity.swift in Sources */,
+				207E8A062C7E300E00676CCF /* Cartoons_Model.swift in Sources */,
 				207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */,
 				207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */,
 				207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */,
 				207E89EB2C7E120E00676CCF /* ViewController.swift in Sources */,
+				207E8A0D2C7E723500676CCF /* NetworkError.swift in Sources */,
 				207E89E72C7E120E00676CCF /* AppDelegate.swift in Sources */,
 				207E89E92C7E120E00676CCF /* SceneDelegate.swift in Sources */,
 			);
@@ -321,7 +341,6 @@
 				INFOPLIST_FILE = "Cartoons For Kids_image/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -349,7 +368,6 @@
 				INFOPLIST_FILE = "Cartoons For Kids_image/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

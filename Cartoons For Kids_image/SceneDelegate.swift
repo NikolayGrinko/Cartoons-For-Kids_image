@@ -13,11 +13,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+//		
+//		guard let windowScene = (scene as? UIWindowScene) else { return }
+//		window = UIWindow(windowScene: windowScene)
+//		window?.rootViewController = ViewController()
+//		window?.makeKeyAndVisible()
 		
-		guard let windowScene = (scene as? UIWindowScene) else { return }
-		window = UIWindow(windowScene: windowScene)
-		window?.rootViewController = ViewController()
+		let router = CartoonsForKids_Router.startExecution()
+		let initialViewController = router.entry!
+		
+		let navigation = UINavigationController()
+		navigation.viewControllers = [initialViewController]
+		
+		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.makeKeyAndVisible()
+		window?.backgroundColor = .systemBackground
+		window?.rootViewController = navigation
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {

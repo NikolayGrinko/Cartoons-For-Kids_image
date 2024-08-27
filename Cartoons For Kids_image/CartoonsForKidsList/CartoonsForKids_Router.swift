@@ -7,23 +7,41 @@
 
 import UIKit
 
-class CartoonsForKids_Router: UIViewController {
+protocol CartoonsList_Router_Protocol {
+	var entry: CartoonsForKids_ViewController? {get}
+	static func startExecution() -> CartoonsList_Router_Protocol
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	func gotoDetailView(cartoon: Cartoon)
+}
 
-        // Do any additional setup after loading the view.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+class CartoonsForKids_Router: CartoonsList_Router_Protocol{
+	var entry: CartoonsForKids_ViewController?
+ 
+ static func startExecution() -> CartoonsList_Router_Protocol {
+	 
+	 let router = CartoonsForKids_Router()
+	 let view = CartoonsForKids_ViewController()
+	 let presenter = CartoonsForKids_Presenter()
+	 let interactor = CartoonsForKids_Interactor()
+	 
+	 view.presenter = presenter
+	 
+	 presenter.view = view
+	 presenter.router = router
+	 presenter.interactor = interactor
+	 
+	 interactor.presenter = presenter
+	 
+	 router.entry = view
+	 
+	 return router
+	 
+ }
+ 
+ func gotoDetailView(cartoon: Cartoon) {
+	 
+ }
+ 
+ 
 }

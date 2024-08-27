@@ -7,23 +7,40 @@
 
 import UIKit
 
-class CartoonsForKids_Presenter: UIViewController {
+protocol CartoonsList_Presenter_Protocol {
+	var router: CartoonsList_Router_Protocol? {get set}
+	var view: CartoonsList_View_Protocol? {get set}
+	var interactor: CartoonsList_Interactor_Protocol? {get set}
+	
+	func viewDidLoad()
+	func interactorWithData(result: Result<[Cartoon], Error>)
+	func tapOnDetail(_ cartoon: Cartoon)
+	
+}
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+class CartoonsForKids_Presenter: CartoonsList_Presenter_Protocol {
+	var router: CartoonsList_Router_Protocol?
+ 
+ var view: CartoonsList_View_Protocol?
+ 
+ var interactor: CartoonsList_Interactor_Protocol?
+ 
+ func viewDidLoad() {
+	 interactor?.getCartoonsListData()
+ }
+ 
+ func interactorWithData(result: Result<[Cartoon], Error>) {
+	 switch(result) {
+	 case .success(let cartoons):
+		 view?.update(with: cartoons)
+	 case .failure(let error):
+		 print(error)
+		 view?.update(with: "Try again later...")
+	 }
+ }
+ 
+ func tapOnDetail(_ cartoon: Cartoon) {
+	 router?.gotoDetailView(cartoon: cartoon)
+ }
 }
