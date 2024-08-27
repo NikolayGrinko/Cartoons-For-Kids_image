@@ -12,6 +12,11 @@
 		207E89EB2C7E120E00676CCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E89EA2C7E120E00676CCF /* ViewController.swift */; };
 		207E89F02C7E121200676CCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E89EF2C7E121200676CCF /* Assets.xcassets */; };
 		207E89F32C7E121200676CCF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 207E89F22C7E121200676CCF /* Base */; };
+		207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */; };
+		207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */; };
+		207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */; };
+		207E8A062C7E300E00676CCF /* CartoonsForKids_Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */; };
+		207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,9 +24,14 @@
 		207E89E62C7E120E00676CCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E89E82C7E120E00676CCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		207E89EA2C7E120E00676CCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		207E89EF2C7E121200676CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		207E89EF2C7E121200676CCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		207E89F22C7E121200676CCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		207E89F42C7E121200676CCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_ViewController.swift; sourceTree = "<group>"; };
+		207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Interactor.swift; sourceTree = "<group>"; };
+		207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Presenter.swift; sourceTree = "<group>"; };
+		207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Entity.swift; sourceTree = "<group>"; };
+		207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,13 +64,11 @@
 		207E89E52C7E120E00676CCF /* Cartoons For Kids_image */ = {
 			isa = PBXGroup;
 			children = (
-				207E89FD2C7E290F00676CCF /* Settings */,
+				207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */,
 				207E89E62C7E120E00676CCF /* AppDelegate.swift */,
 				207E89E82C7E120E00676CCF /* SceneDelegate.swift */,
 				207E89EA2C7E120E00676CCF /* ViewController.swift */,
-				207E89EF2C7E121200676CCF /* Assets.xcassets */,
-				207E89F12C7E121200676CCF /* LaunchScreen.storyboard */,
-				207E89F42C7E121200676CCF /* Info.plist */,
+				207E89FD2C7E290F00676CCF /* Settings */,
 			);
 			path = "Cartoons For Kids_image";
 			sourceTree = "<group>";
@@ -68,8 +76,23 @@
 		207E89FD2C7E290F00676CCF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				207E89F12C7E121200676CCF /* LaunchScreen.storyboard */,
+				207E89EF2C7E121200676CCF /* Assets.xcassets */,
+				207E89F42C7E121200676CCF /* Info.plist */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */ = {
+			isa = PBXGroup;
+			children = (
+				207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */,
+				207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */,
+				207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */,
+				207E8A052C7E300E00676CCF /* CartoonsForKids_Entity.swift */,
+				207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */,
+			);
+			path = CartoonsForKidsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */,
+				207E8A062C7E300E00676CCF /* CartoonsForKids_Entity.swift in Sources */,
+				207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */,
+				207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */,
+				207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */,
 				207E89EB2C7E120E00676CCF /* ViewController.swift in Sources */,
 				207E89E72C7E120E00676CCF /* AppDelegate.swift in Sources */,
 				207E89E92C7E120E00676CCF /* SceneDelegate.swift in Sources */,
@@ -290,7 +318,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W2P9X4349P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cartoons For Kids_image/Info.plist";
+				INFOPLIST_FILE = "Cartoons For Kids_image/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,7 +346,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W2P9X4349P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Cartoons For Kids_image/Info.plist";
+				INFOPLIST_FILE = "Cartoons For Kids_image/Settings/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
