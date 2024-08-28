@@ -11,7 +11,7 @@ import UIKit
 protocol CartoonsList_View_Protocol {
 	var presenter: CartoonsList_Presenter_Protocol? {get set}
 	
-	func update(with cartoons:[Cartoon])
+	func update(with cartoons:[CartoonModel])
 	func update(with error:String)
 }
 
@@ -26,7 +26,7 @@ class CartoonsForKids_ViewController: UIViewController, CartoonsList_View_Protoc
  
  // MARK: - PROPERTY
  var presenter: CartoonsList_Presenter_Protocol?
- var cartoons: [Cartoon] = []
+ var cartoons: [CartoonModel] = []
 
  
  // MARK: - LIFE CYCLE
@@ -86,7 +86,7 @@ extension CartoonsForKids_ViewController {
 
 // MARK: - CartoonsList_View_Protocol
 extension CartoonsForKids_ViewController {
- func update(with cartoons: [Cartoon]) {
+ func update(with cartoons: [CartoonModel]) {
 	 DispatchQueue.main.async { [weak self] in
 		 self?.cartoons = cartoons
 		 self?.messageLabel.isHidden = true

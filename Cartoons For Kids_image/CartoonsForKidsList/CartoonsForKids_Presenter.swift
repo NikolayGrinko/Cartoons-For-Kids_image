@@ -13,34 +13,34 @@ protocol CartoonsList_Presenter_Protocol {
 	var interactor: CartoonsList_Interactor_Protocol? {get set}
 	
 	func viewDidLoad()
-	func interactorWithData(result: Result<[Cartoon], Error>)
-	func tapOnDetail(_ cartoon: Cartoon)
+	func interactorWithData(result: Result<[CartoonModel], Error>)
+	func tapOnDetail(_ cartoon: CartoonModel)
 	
 }
 
 
 class CartoonsForKids_Presenter: CartoonsList_Presenter_Protocol {
 	var router: CartoonsList_Router_Protocol?
- 
- var view: CartoonsList_View_Protocol?
- 
- var interactor: CartoonsList_Interactor_Protocol?
- 
- func viewDidLoad() {
-	 interactor?.getCartoonsListData()
- }
- 
- func interactorWithData(result: Result<[Cartoon], Error>) {
-	 switch(result) {
-	 case .success(let cartoons):
-		 view?.update(with: cartoons)
-	 case .failure(let error):
-		 print(error)
-		 view?.update(with: "Try again later...")
-	 }
- }
- 
- func tapOnDetail(_ cartoon: Cartoon) {
-	 router?.gotoDetailView(cartoon: cartoon)
- }
+	
+	var view: CartoonsList_View_Protocol?
+	
+	var interactor: CartoonsList_Interactor_Protocol?
+	
+	func viewDidLoad() {
+		interactor?.getCartoonsListData()
+	}
+	
+	func interactorWithData(result: Result<[CartoonModel], Error>) {
+		switch(result) {
+		case .success(let cartoons):
+			view?.update(with: cartoons)
+		case .failure(let error):
+			print(error)
+			view?.update(with: "Try again later...")
+		}
+	}
+	
+	func tapOnDetail(_ cartoon: CartoonModel) {
+		router?.gotoDetailView(cartoon: cartoon)
+	}
 }
