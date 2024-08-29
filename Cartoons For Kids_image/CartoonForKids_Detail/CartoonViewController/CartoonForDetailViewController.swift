@@ -1,5 +1,5 @@
 //
-//  CartoonForDetail_ViewController.swift
+//  CartoonForDetailViewController.swift
 //  Cartoons For Kids_image
 //
 //  Created by Николай Гринько on 28.08.2024.
@@ -17,6 +17,7 @@ protocol ICartoonDetailViewProtocol {
 }
 
 class CartoonDetailViewController: UIViewController, ICartoonDetailViewProtocol {
+	
 	// MARK: - COMPONENT
 	let stackView = UIStackView()
 	let label = UILabel()
@@ -29,9 +30,11 @@ class CartoonDetailViewController: UIViewController, ICartoonDetailViewProtocol 
 	// MARK: - LIFE CYCLE
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		title = "CartoonDetail"
+		
 		style()
 		layout()
-		presenter?.viewDidLoad()
+		presenter?.viewSetData()
 	}
 }
 
@@ -50,8 +53,6 @@ extension CartoonDetailViewController {
 		
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.contentMode = .scaleAspectFit
-		
-		
 	}
 	
 	func layout() {
@@ -61,7 +62,7 @@ extension CartoonDetailViewController {
 		view.addSubview(stackView)
 		
 		NSLayoutConstraint.activate([
-			stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+			stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
 			stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 			stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
 			stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
@@ -69,14 +70,14 @@ extension CartoonDetailViewController {
 	}
 }
 
-// MARK: - CartoonDetail_View_Protocol
+// MARK: - CartoonDetailViewController
 extension CartoonDetailViewController {
 	
 	func update(with cartoon: CartoonModelEntity) {
 		
 		label.textColor = .black
 		label.text = cartoon.title
-
+		
 		if let url = URL(string: cartoon.image ?? "") {
 			imageView.load(url: url)
 			imageView.isHidden = false

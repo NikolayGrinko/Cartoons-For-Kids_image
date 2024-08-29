@@ -16,15 +16,13 @@ protocol ICartoonDetailInteractorProtocol {
 }
 
 class CartoonDetailInteractor: ICartoonDetailInteractorProtocol {
-	var presenter: ICartoonDetailPresenterProtocol?
 	
+	var presenter: ICartoonDetailPresenterProtocol?
 	var cartoon: CartoonModelEntity?
 	
 	func getCartoonData() {
 		
 		presenter?.interactorUpdateData(cartoon: cartoon)
 	}
-	
-	
 }
 

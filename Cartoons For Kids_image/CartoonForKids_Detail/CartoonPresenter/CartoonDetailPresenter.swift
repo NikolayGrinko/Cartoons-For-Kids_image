@@ -9,20 +9,19 @@ import Foundation
 
 
 protocol ICartoonDetailPresenterProtocol {
+	
 	var router: ICartoonDetailRouterProtocol? {get set}
 	var interactor: ICartoonDetailInteractorProtocol? {get set}
 	var view: ICartoonDetailViewProtocol? {get set}
 	
 	func interactorUpdateData(cartoon: CartoonModelEntity?)
-	func viewDidLoad()
-	
+	func viewSetData()
 }
 
 class CartoonDetailPresenter: ICartoonDetailPresenterProtocol {
+	
 	var router: ICartoonDetailRouterProtocol?
-	
 	var interactor: ICartoonDetailInteractorProtocol?
-	
 	var view: ICartoonDetailViewProtocol?
 	
 	func interactorUpdateData(cartoon: CartoonModelEntity?) {
@@ -31,10 +30,9 @@ class CartoonDetailPresenter: ICartoonDetailPresenterProtocol {
 		} else {
 			view?.update(with: "No data")
 		}
-		
 	}
 	
-	func viewDidLoad() {
+	func viewSetData() {
 		interactor?.getCartoonData()
 	}
 }

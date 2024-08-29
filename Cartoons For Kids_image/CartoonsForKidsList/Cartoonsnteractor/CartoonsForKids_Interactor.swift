@@ -1,5 +1,5 @@
 //
-//  CartoonsForKids_Interactor.swift
+//  CartoonsForKidsInteractor.swift
 //  Cartoons For Kids_image
 //
 //  Created by Николай Гринько on 27.08.2024.
@@ -25,7 +25,6 @@ class CartoonsForKidsInteractor: ICartoonsListInteractorProtocol {
 				self?.presenter?.interactorWithData(result: .failure(NetworkError.serverError))
 				return
 			}
-			
 			do {
 				let cartoons = try JSONDecoder().decode([CartoonModelEntity].self, from: data)
 				self?.presenter?.interactorWithData(result: .success(cartoons))
@@ -34,7 +33,6 @@ class CartoonsForKidsInteractor: ICartoonsListInteractorProtocol {
 				self?.presenter?.interactorWithData(result: .failure(NetworkError.deodingError))
 			}
 		}
-		
 		task.resume()
 	}
 }

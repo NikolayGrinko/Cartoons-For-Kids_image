@@ -74,11 +74,12 @@
 		207E89E52C7E120E00676CCF /* Cartoons For Kids_image */ = {
 			isa = PBXGroup;
 			children = (
+				209474D32C813E6C00E9166F /* StartOfLaunch */,
+				207E89FD2C7E290F00676CCF /* Settings */,
 				207E8A1C2C7E7D2300676CCF /* Extentions */,
 				207E8A0B2C7E71CB00676CCF /* CartoonForKids_Error */,
 				207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */,
 				207E8A0E2C7E794E00676CCF /* CartoonForKids_Detail */,
-				207E89FD2C7E290F00676CCF /* Settings */,
 			);
 			path = "Cartoons For Kids_image";
 			sourceTree = "<group>";
@@ -86,7 +87,6 @@
 		207E89FD2C7E290F00676CCF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				207E89E62C7E120E00676CCF /* AppDelegate.swift */,
 				207E89F12C7E121200676CCF /* LaunchScreen.storyboard */,
 				207E89EF2C7E121200676CCF /* Assets.xcassets */,
 				207E89F42C7E121200676CCF /* Info.plist */,
@@ -212,6 +212,14 @@
 				209474C82C80F21F00E9166F /* CartoonDetailRouter.swift */,
 			);
 			path = CartoonRouter;
+			sourceTree = "<group>";
+		};
+		209474D32C813E6C00E9166F /* StartOfLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				207E89E62C7E120E00676CCF /* AppDelegate.swift */,
+			);
+			path = StartOfLaunch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
