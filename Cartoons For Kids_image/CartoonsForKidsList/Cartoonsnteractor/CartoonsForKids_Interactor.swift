@@ -27,7 +27,7 @@ class CartoonsForKids_Interactor: CartoonsList_Interactor_Protocol {
 			}
 			
 			do {
-				let cartoons = try JSONDecoder().decode([CartoonModel].self, from: data)
+				let cartoons = try JSONDecoder().decode([CartoonModelEntity].self, from: data)
 				self?.presenter?.interactorWithData(result: .success(cartoons))
 				print(cartoons)
 			} catch {

@@ -13,8 +13,8 @@ protocol CartoonsList_Presenter_Protocol {
 	var interactor: CartoonsList_Interactor_Protocol? {get set}
 	
 	func viewDidLoad()
-	func interactorWithData(result: Result<[CartoonModel], Error>)
-	func tapOnDetail(_ cartoon: CartoonModel)
+	func interactorWithData(result: Result<[CartoonModelEntity], Error>)
+	func tapOnDetail(_ cartoon: CartoonModelEntity)
 	
 }
 
@@ -30,7 +30,7 @@ class CartoonsForKids_Presenter: CartoonsList_Presenter_Protocol {
 		interactor?.getCartoonsListData()
 	}
 	
-	func interactorWithData(result: Result<[CartoonModel], Error>) {
+	func interactorWithData(result: Result<[CartoonModelEntity], Error>) {
 		switch(result) {
 		case .success(let cartoons):
 			view?.update(with: cartoons)
@@ -40,7 +40,7 @@ class CartoonsForKids_Presenter: CartoonsList_Presenter_Protocol {
 		}
 	}
 	
-	func tapOnDetail(_ cartoon: CartoonModel) {
+	func tapOnDetail(_ cartoon: CartoonModelEntity) {
 		router?.gotoDetailView(cartoon: cartoon)
 	}
 }

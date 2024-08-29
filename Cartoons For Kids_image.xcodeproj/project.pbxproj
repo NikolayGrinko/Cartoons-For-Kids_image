@@ -13,7 +13,7 @@
 		207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */; };
 		207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */; };
 		207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */; };
-		207E8A062C7E300E00676CCF /* Cartoons_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A052C7E300E00676CCF /* Cartoons_Model.swift */; };
+		207E8A062C7E300E00676CCF /* Cartoons_ModelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A052C7E300E00676CCF /* Cartoons_ModelEntity.swift */; };
 		207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */; };
 		207E8A0D2C7E723500676CCF /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A0C2C7E723500676CCF /* NetworkError.swift */; };
 		207E8A1E2C7E7D5800676CCF /* Extention + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E8A1D2C7E7D5800676CCF /* Extention + UIImageView.swift */; };
@@ -28,7 +28,7 @@
 		207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_ViewController.swift; sourceTree = "<group>"; };
 		207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Interactor.swift; sourceTree = "<group>"; };
 		207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Presenter.swift; sourceTree = "<group>"; };
-		207E8A052C7E300E00676CCF /* Cartoons_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoons_Model.swift; sourceTree = "<group>"; };
+		207E8A052C7E300E00676CCF /* Cartoons_ModelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cartoons_ModelEntity.swift; sourceTree = "<group>"; };
 		207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartoonsForKids_Router.swift; sourceTree = "<group>"; };
 		207E8A0C2C7E723500676CCF /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		207E8A1D2C7E7D5800676CCF /* Extention + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention + UIImageView.swift"; sourceTree = "<group>"; };
@@ -66,7 +66,6 @@
 			children = (
 				207E8A1C2C7E7D2300676CCF /* Extentions */,
 				207E8A0B2C7E71CB00676CCF /* CartoonForKids_Error */,
-				207E8A0A2C7E6E5500676CCF /* Model */,
 				207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */,
 				207E8A0E2C7E794E00676CCF /* CartoonForKids_Detail */,
 				207E89E62C7E120E00676CCF /* AppDelegate.swift */,
@@ -88,20 +87,21 @@
 		207E89FE2C7E2EC700676CCF /* CartoonsForKidsList */ = {
 			isa = PBXGroup;
 			children = (
-				207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */,
-				207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */,
-				207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */,
-				207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */,
+				209474C02C80F09200E9166F /* CartoonsViewController */,
+				209474C12C80F0A800E9166F /* Cartoonsnteractor */,
+				209474C22C80F0C200E9166F /* CartoonsPresenter */,
+				209474C32C80F0DE00E9166F /* CartoonsRouter */,
+				207E8A0A2C7E6E5500676CCF /* CartoonsForKidsModel */,
 			);
 			path = CartoonsForKidsList;
 			sourceTree = "<group>";
 		};
-		207E8A0A2C7E6E5500676CCF /* Model */ = {
+		207E8A0A2C7E6E5500676CCF /* CartoonsForKidsModel */ = {
 			isa = PBXGroup;
 			children = (
-				207E8A052C7E300E00676CCF /* Cartoons_Model.swift */,
+				207E8A052C7E300E00676CCF /* Cartoons_ModelEntity.swift */,
 			);
-			path = Model;
+			path = CartoonsForKidsModel;
 			sourceTree = "<group>";
 		};
 		207E8A0B2C7E71CB00676CCF /* CartoonForKids_Error */ = {
@@ -125,6 +125,38 @@
 				207E8A1D2C7E7D5800676CCF /* Extention + UIImageView.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		209474C02C80F09200E9166F /* CartoonsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				207E89FF2C7E2F6000676CCF /* CartoonsForKids_ViewController.swift */,
+			);
+			path = CartoonsViewController;
+			sourceTree = "<group>";
+		};
+		209474C12C80F0A800E9166F /* Cartoonsnteractor */ = {
+			isa = PBXGroup;
+			children = (
+				207E8A012C7E2FB200676CCF /* CartoonsForKids_Interactor.swift */,
+			);
+			path = Cartoonsnteractor;
+			sourceTree = "<group>";
+		};
+		209474C22C80F0C200E9166F /* CartoonsPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				207E8A032C7E2FF800676CCF /* CartoonsForKids_Presenter.swift */,
+			);
+			path = CartoonsPresenter;
+			sourceTree = "<group>";
+		};
+		209474C32C80F0DE00E9166F /* CartoonsRouter */ = {
+			isa = PBXGroup;
+			children = (
+				207E8A072C7E302600676CCF /* CartoonsForKids_Router.swift */,
+			);
+			path = CartoonsRouter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				207E8A002C7E2F6000676CCF /* CartoonsForKids_ViewController.swift in Sources */,
-				207E8A062C7E300E00676CCF /* Cartoons_Model.swift in Sources */,
+				207E8A062C7E300E00676CCF /* Cartoons_ModelEntity.swift in Sources */,
 				207E8A082C7E302600676CCF /* CartoonsForKids_Router.swift in Sources */,
 				207E8A022C7E2FB200676CCF /* CartoonsForKids_Interactor.swift in Sources */,
 				207E8A042C7E2FF800676CCF /* CartoonsForKids_Presenter.swift in Sources */,

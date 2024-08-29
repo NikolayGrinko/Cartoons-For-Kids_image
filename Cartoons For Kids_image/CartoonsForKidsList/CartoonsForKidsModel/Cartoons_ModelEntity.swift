@@ -8,7 +8,7 @@
 import UIKit
 
 
-struct CartoonModel: Decodable {
+struct CartoonModelEntity: Decodable {
 	let title: String
 	let year: Int
 	let creator: [String]

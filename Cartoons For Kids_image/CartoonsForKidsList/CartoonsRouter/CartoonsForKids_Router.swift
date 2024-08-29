@@ -11,7 +11,7 @@ protocol CartoonsList_Router_Protocol {
 	var entry: CartoonsForKids_ViewController? {get}
 	static func startExecution() -> CartoonsList_Router_Protocol
 
-	func gotoDetailView(cartoon: CartoonModel)
+	func gotoDetailView(cartoon: CartoonModelEntity)
 }
 
 
@@ -39,7 +39,7 @@ class CartoonsForKids_Router: CartoonsList_Router_Protocol{
 	 
  }
  
- func gotoDetailView(cartoon: CartoonModel) {
+ func gotoDetailView(cartoon: CartoonModelEntity) {
 	 
  }
  
