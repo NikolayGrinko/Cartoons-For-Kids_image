@@ -8,15 +8,15 @@
 import UIKit
 
 
-protocol CartoonsList_View_Protocol {
-	var presenter: CartoonsList_Presenter_Protocol? {get set}
+protocol ICartoonsListViewProtocol {
+	var presenter: ICartoonsListPresenterProtocol? {get set}
 	
 	func update(with cartoons:[CartoonModelEntity])
 	func update(with error:String)
 }
 
 
-class CartoonsForKids_ViewController: UIViewController, CartoonsList_View_Protocol {
+class CartoonsForKidsViewController: UIViewController, ICartoonsListViewProtocol {
 
  
 	// MARK: - COMPONENT
@@ -25,7 +25,7 @@ class CartoonsForKids_ViewController: UIViewController, CartoonsList_View_Protoc
  
  
  // MARK: - PROPERTY
- var presenter: CartoonsList_Presenter_Protocol?
+ var presenter: ICartoonsListPresenterProtocol?
  var cartoons: [CartoonModelEntity] = []
 
  
@@ -44,7 +44,7 @@ class CartoonsForKids_ViewController: UIViewController, CartoonsList_View_Protoc
  }
 }
 
-extension CartoonsForKids_ViewController {
+extension CartoonsForKidsViewController {
  func style() {
 	 tableView.translatesAutoresizingMaskIntoConstraints = false
 	 tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -85,7 +85,7 @@ extension CartoonsForKids_ViewController {
 }
 
 // MARK: - CartoonsList_View_Protocol
-extension CartoonsForKids_ViewController {
+extension CartoonsForKidsViewController {
  func update(with cartoons: [CartoonModelEntity]) {
 	 DispatchQueue.main.async { [weak self] in
 		 self?.cartoons = cartoons
@@ -108,7 +108,7 @@ extension CartoonsForKids_ViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension CartoonsForKids_ViewController: UITableViewDelegate {
+extension CartoonsForKidsViewController: UITableViewDelegate {
  
  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 	 presenter?.tapOnDetail(cartoons[indexPath.row])
@@ -117,7 +117,7 @@ extension CartoonsForKids_ViewController: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension CartoonsForKids_ViewController: UITableViewDataSource {
+extension CartoonsForKidsViewController: UITableViewDataSource {
  
  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 	 return cartoons.count
@@ -136,7 +136,7 @@ extension CartoonsForKids_ViewController: UITableViewDataSource {
 }
 
 // MARK: - Unit Testing
-extension CartoonsForKids_ViewController {
+extension CartoonsForKidsViewController {
  func errorMessageForTesting() -> String? {
 	 return messageLabel.text
  }

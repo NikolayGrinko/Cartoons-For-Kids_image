@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol CartoonsList_Presenter_Protocol {
-	var router: CartoonsList_Router_Protocol? {get set}
-	var view: CartoonsList_View_Protocol? {get set}
-	var interactor: CartoonsList_Interactor_Protocol? {get set}
+protocol ICartoonsListPresenterProtocol {
+	var router: ICartoonsListRouterProtocol? {get set}
+	var view: ICartoonsListViewProtocol? {get set}
+	var interactor: ICartoonsListInteractorProtocol? {get set}
 	
 	func viewDidLoad()
 	func interactorWithData(result: Result<[CartoonModelEntity], Error>)
@@ -19,12 +19,12 @@ protocol CartoonsList_Presenter_Protocol {
 }
 
 
-class CartoonsForKids_Presenter: CartoonsList_Presenter_Protocol {
-	var router: CartoonsList_Router_Protocol?
+class CartoonsForKidsPresenter: ICartoonsListPresenterProtocol {
+	var router: ICartoonsListRouterProtocol?
 	
-	var view: CartoonsList_View_Protocol?
+	var view: ICartoonsListViewProtocol?
 	
-	var interactor: CartoonsList_Interactor_Protocol?
+	var interactor: ICartoonsListInteractorProtocol?
 	
 	func viewDidLoad() {
 		interactor?.getCartoonsListData()

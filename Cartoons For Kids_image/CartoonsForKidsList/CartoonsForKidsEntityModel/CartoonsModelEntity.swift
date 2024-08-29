@@ -1,5 +1,5 @@
 //
-//  Cartoons_Model.swift
+//  CartoonModelEntity.swift
 //  Cartoons For Kids_image
 //
 //  Created by Николай Гринько on 27.08.2024.
