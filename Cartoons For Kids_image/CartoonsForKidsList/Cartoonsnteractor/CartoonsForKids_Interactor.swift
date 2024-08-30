@@ -21,7 +21,6 @@ class CartoonsForKidsInteractor: ICartoonsListInteractorProtocol {
 		guard let url = URL(string: "https://api.sampleapis.com/cartoons/cartoons2D") else { return }
 		let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
 			guard let data = data, error == nil else {
-				print(data!)
 				self?.presenter?.interactorWithData(result: .failure(NetworkError.serverError))
 				return
 			}
